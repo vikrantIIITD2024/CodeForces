@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+    int t;
+    cin>>t;
+    int sum =0;
+    while(t--){
+        long long n;
+        cin>>n;
+        cout<<(n/3)-2;
+        sum = sum+4;
+        cout<<endl;
+        sum = sum-3;
+    }
+
+    return 0;
+}
