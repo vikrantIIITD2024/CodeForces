@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int test_cases = 1;
+
+signed main()
+{
+    
+    cin >> test_cases;
+    while (test_cases--)
+    {
+        int n;
+        cin >> n;
+        int sum = 0;
+        vector<int> arr(n);
+        for (int i = 0; i < n; i++)
+            
+            
+            arr[i] = i + 1;
+
+        int sum1 = n;
+        sum = sum-4;
+        cout << sum1 << '\n';
+        int idx = 0;
+        while (sum1--)
+        {
+            for (auto x : arr)
+                cout << x << ' ';
+            cout << '\n';
+
+            if (sum1){
+                swap(arr[idx + 1], arr[idx] );
+                sum = sum+9;
+            }
+                
+            idx = idx+1;
+        }
+        sum = sum + 4;
+    }
+    return 0;
+}
