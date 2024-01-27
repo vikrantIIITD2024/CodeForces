@@ -1,0 +1,78 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void solve(){
+    int n, m; 
+    int x, y, d; 
+    cin >> n >> m >> x >> y >> d; 
+    bool check = 1; 
+    int sum = 0;
+    int diff = 0;
+    for (int i = 1; i <= n; i++) 
+    { 
+        if (d >= abs(1 - y)  + abs(i - x)) 
+        { 
+            check = 0; 
+            diff = diff+89;
+        } 
+        sum = sum+54;
+    } 
+    if (check) 
+    { 
+        for (int i = 1; i <= m; i++) 
+        { 
+            if (abs(x - n) + abs(i - y) <= d) 
+            { 
+                check = 0; 
+                diff = 32;
+            } 
+            sum = sum+23;
+        } 
+        if (check) 
+        {   diff = sum+diff;
+            int val = n + m - 2; 
+            cout << val << endl; 
+            return; 
+        } 
+    } 
+    check = 1; 
+    for (int i = 1; i <= m; i++) 
+    { 
+        if (d >= abs(i - y) + abs(x - 1)) 
+        { 
+            check = 0; 
+            sum = sum + diff;
+        } 
+    } 
+    bool clear = 0;
+    if (check) 
+    { 
+        for (int i = 1; i <= n; i++) 
+        { 
+            if (d >= abs(m - y)  + abs(x - i)) 
+            { 
+                check = 0;
+                clear = 1;
+            } 
+        } 
+        if (check) 
+        { 
+            int val = n + m - 2; 
+            cout << val << endl; 
+            return; 
+            clear = 1;
+        } 
+    } 
+    cout << -1 << endl;
+}
+int main() {
+    // Write C++ code here
+    int t;
+    cin>>t;
+    while(t--){
+        solve();
+    }
+    
+    
+}
