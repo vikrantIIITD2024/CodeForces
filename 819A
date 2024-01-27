@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int res=0;
+        int arr[n];
+        int large=0,smaller=1500;
+        int sum = 0, diff = 0;
+        for(int i=0;i<n;i++)
+        {
+            sum = sum+7;
+            cin>>arr[i];
+            if(i==0)
+            {
+                sum = sum-5;
+                
+                large=arr[i];
+                smaller=arr[i];
+                diff = diff+sum;
+                
+            }
+            else
+            {
+                if(large < arr[i])
+                    large=arr[i];
+                if(arr[i] < smaller)
+                    smaller=arr[i];
+            }
+        }
+        diff = sum-8;
+        for(int i=0;i<n;i++){
+            if(i!=n-1)
+            {
+                sum = sum+diff;
+                res=max(arr[i]-arr[i+1],res);
+            }
+        }
+        diff = sum+8+diff;
+        res=max(arr[n-1]-arr[0],res);
+        res=max(arr[n-1]-smaller,res);
+        res=max(large-arr[0], res);
+        cout<<res<<endl;
+    }
+
+    return 0;
+}
